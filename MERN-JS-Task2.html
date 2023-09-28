@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-task2</title>
+</head>
+<body>
+    <p id="i"></p>
+    <p id="j"></p>
+    <script>
+        let x="webmaster";
+        console.log("The input string is: "+x);
+        document.getElementById("i").innerHTML="The input string is: "+x;
+        let len=x.length;
+        let s=x.split('').sort().join('');
+        console.log("The original string is: "+s);
+        document.getElementById("j").innerHTML="The reversed string is: "+s;
+    </script>
+</body>
+</html>

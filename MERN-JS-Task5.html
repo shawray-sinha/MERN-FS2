@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-task 5</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="contactForm">
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    <small class="text-danger" id="nameFeedback"></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    <small class="text-danger" id="emailFeedback"></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="website" class="col-sm-2 col-form-label">Website</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="website" placeholder="Your Website">
+                    <small class="text-danger" id="websiteFeedback"></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="message" class="col-sm-2 col-form-label">Message</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                    <small class="text-danger" id="msgFeedback"></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="scripts\script3.js" ></script>
+</body>
+</html>

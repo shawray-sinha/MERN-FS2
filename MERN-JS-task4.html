@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task 4</title>
+</head>
+<body> <br><br><br><center>
+    <fieldset style="height: fit-content; width: fit-content;">
+  <input type="button" onclick="showdate()" value="Show Date"><br>
+    <span id="date"></span><br>
+    <input type="button" onclick="showtime()" value="Show Time"><br>
+    <span id="time"></span><br>
+</center>
+       <script>
+        function showdate(){
+            const date = new Date();
+const n = date.toDateString();
+document.getElementById("date").innerHTML = n;
+        }
+            function showtime(){
+                var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                
+             document.getElementById("time").innerHTML = time ;
+
+            } 
+            
+    </script>
+  </fieldset>
+</body>
+</html>

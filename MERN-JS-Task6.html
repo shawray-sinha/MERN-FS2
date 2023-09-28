@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task6</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+  <style>
+    .card{
+        height:55vh;
+        margin:10% 35% 35% 20%;
+        background-color: rgb(228, 224, 224);
+    }
+    .card-title{
+        font-size:x-large;
+        font-family:cursive;
+    }
+    .btn{
+        border: 10px solid blue;
+        background-color:blue ;
+        width:100%
+    }
+    .form-table{
+        width:75%;
+    }
+  </style>
+</head>
+<body>
+    <center>
+    <div class="container mt-5">
+    <div class="card">
+        <i class="card-title text-center pt-5">Instagram</i>
+        <form id="instagram ">
+            <div class="form-table">
+              <div class="form-table-row">
+                <div class="form-table-cell wide-column">
+                  <div class="input-group input-group-sm error-input">
+                    <span
+                      class="input-group-text"
+                      id="inputGroup-sizing-default firstnameInputGroup"
+                      ><i class="bi bi-person-fill" id="firstnameIcon"></i
+                    ></span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="username"
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                      id="username"
+                    />
+                  </div>
+                  <span class="error text-danger" id="usernamerror"></span>
+                </div>
+              </div>
+              <br>
+              <div class="form-table-row">
+                <div class="form-table-cell wide-column">
+                  <div class="input-group input-group-sm error-input">
+                    <span
+                    class="input-group-text"
+                    id="inputGroup-sizing-default firstnameInputGroup">
+                    <i class="bi bi-lock-fill" id="pwd"></i ></span>
+                      
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="password"
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                      id="password"
+                    />
+                  </div>
+                  <span class="error text-danger" id="pwderror"></span>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn text-light" id="sendButton"><b>
+                  Log in
+                </b></button>
+              </div>
+              <div class="row">
+                <div class="col-5 text-center pt-3">
+                    <input type="checkbox" name="remember me" id="Remember me">remember me 
+                </div>
+                <div class="col-7  text-center-primary pt-3 "><a href="#">forgot Password?</a> </div>
+              </div>
+    </div><br> <br><br>
+    <h5 class="text-center">Don't have an account! <a href="#">Sign up here.</a></h5></div>
+
+</div>
+</center>
+<script>
+    document.getElementById("sendButton").addEventListener("click",function(event){
+        var user=document.getElementById("username");
+        var pwd=document.getElementById("password");
+        if (user.value.trim() === "") {
+            document.getElementById("usernamerror").textContent = "This field is required";
+            user.classList.add("is-invalid");
+            event.preventDefault();
+        } else {
+            document.getElementById("usernamerror").textContent = "";
+            user.classList.remove("is-invalid");
+        }
+        if (pwd.value.trim() === "") {
+            document.getElementById("pwderror").textContent = "This field is required";
+           pwd.classList.add("is-invalid");
+            event.preventDefault();
+        } else {
+            document.getElementById("pwderror").textContent = "";
+            pwd.classList.remove("is-invalid");
+        }
+    })
+</script></body>
+</html>

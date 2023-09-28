@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Task 7</title>
+</head>
+<body>
+    <script type = "text/javascript">   
+      
+        var img = null;   
+        function init(){    
+           img = document.getElementById('myimg');  
+           img.style.position = 'relative';       
+           img.style.left = '50px'; 
+           img.style.right ='-50px'; 
+        }       
+        function moveRight(){    
+           img.style.left = parseInt(img.style.left) + 100 + 'px';    
+        }    
+       
+        function moveLeft() {
+        document.getElementById('myimg').style.left='-100px';
+    }
+        window.onload = init;    
+ 
+  </script>   
+<form>   
+    <img id = "myimg" src = "train.jpg" />   
+    <center>  
+       <p>Click the below button to handle animation</p>   
+    <input type = "button" value = "Start" onclick = "moveRight();" />  
+    <input type = "button" value = "Stop" onclick = "moveLeft();" />  
+
+ </center>   
+ </form> 
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-task1</title>
+</head>
+<body>
+    <p id="i"></p>
+    <p id="j"></p>
+    <script>
+        let x="32243";
+        console.log("The original number is: "+x);
+
+        document.getElementById("i").innerHTML="The original number is: "+x;
+        let len=x.length;
+        let s="";
+        for(let i=len-1;i>=0;i--){
+            let z=x.charAt(i);
+            s=s+z;
+        }
+        console.log("The original number is: "+s);
+        document.getElementById("j").innerHTML="The reversed number is: "+s;
+    </script>
+</body>
+</html>

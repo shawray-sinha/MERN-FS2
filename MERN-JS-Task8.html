@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS-Task 8</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        fieldset {
+            width: max-content;
+            margin: 0 auto;
+            background-image: linear-gradient(to top left, #f5f1ac, #ec9b5e, #FF77CC, rgb(202, 83, 172));
+            padding: 20px;
+        }
+        table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+   width: fit-content;
+      align-items: center;
+      text-align:center;
+    }
+    
+    td {
+     
+      text-align: left;
+      padding: 8px;
+      width: fit-content;
+    }
+    
+    tr {
+     
+      text-align:center;
+    }
+    h1{
+        color: #4845ac;
+        text-decoration-color: blue;
+    }
+        .poor {
+            color: red;
+        }
+        .moderate {
+            color: orange;
+        }
+        .good {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>Registration form</h1>
+        <form action="/action_page.php" method="post">
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" id="fname" name="fname" required></td>
+                    <td><span id="fnameValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" id="lname" name="lname"  required></td>
+                    <td><span id="lnameValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" id="email" name="email" 
+                         required></td>
+                    <td><span id="emailValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="password" name="password" required></td>
+                    <td><span id="passwordValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Re-Password</td>
+                    <td><input type="password" id="repassword" name="repassword"  required></td>
+                    <td><span id="repasswordValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label><br>
+                        
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </td>
+                    <td><span id="genderValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" id="age" name="age" required></td>
+                    <td><span id="ageValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="tel" id="phno" name="phno"  required></td>
+                    <td><span id="phnoValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="address" id="address"  cols="20" rows="5"></textarea></td>
+                    <td><span id="addressValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td><input type="text" id="state" name="state"  required></td>
+                    <td><span id="stateValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <option value="India">India</option>
+                            <option value="US">US</option>
+<option value="UK">UK</option>
+                        </select>
+                    </td>
+                    <td><span id="countryValidation"></span></td>
+                </tr>
+                <tr>
+                    <td>Languages known</td>
+                    <td>
+                        <input type="checkbox" id="english" name="languages" value="English">
+                        <label for="english">English</label>
+
+                        <input type="checkbox" id="kannada" name="languages" value="Kannada">
+                        <label for="kannada">Kannada</label>
+
+                        <input type="checkbox" id="hindi" name="languages" value="Hindi">
+                        <label for="hindi">Hindi</label>
+
+                        <input type="checkbox" id="telugu" name="languages" value="Telugu">
+                        <label for="telugu">Telugu</label>
+                    </td>
+                    <td><span id="languagesValidation"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" id="declaration" name="declaration" required>
+                        <label for="declaration">Hereby I declare all details are true.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="first">
+                        Log in to <a href="">Ethnus</a> website
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
+    
+    <script>
+    
+        function validateField(inputField, validationSpan) {
+            const inputValue = inputField.value.trim();
+            const minLength = 5; 
+            
+            if (inputValue.length === 0) {
+                validationSpan.textContent = '';
+            } else if (inputField.type === 'text' && inputValue.length < minLength) {
+                validationSpan.textContent = 'Poor';}
+            if (inputValue.length === 0) {
+                    validationSpan.textContent = '';
+                } else if (inputField.type === 'text' && inputValue.length < minLength) {
+                    validationSpan.textContent = 'Poor';}
+            if (inputValue.length === 0) {
+                validationSpan.textContent = '';
+            } else if (inputField.type === 'password' && inputValue.length < minLength) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';
+            } else if (inputField.type === 'password' && inputValue.length>minLength && inputValue.length < minLength * 2) {
+                validationSpan.textContent = 'Moderate';
+                validationSpan.className = 'moderate';
+            } else if (inputField.type === 'number' && inputValue < 18) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';
+            } else if (inputField.type === 'password' && inputValue.length < minLength) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';
+            } else if (inputField.type === 'password' && inputValue.length>minLength && inputValue.length < minLength * 2) {
+                validationSpan.textContent = 'Moderate';
+                validationSpan.className = 'moderate';
+            } else if (inputField.id === 'repassword' && inputValue !== document.getElementById('password').value) {
+                validationSpan.textContent = 'Mismatch';
+                validationSpan.className = 'poor';
+            } else if (inputField.type === 'number' && inputValue < 18) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';
+            } else if (inputField.type === 'text' && inputValue < 10) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';   
+            } else if (inputField.type === 'tel' && inputValue < 10) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';   
+            } else if (inputField.type === 'age' && inputValue < 1) {
+                validationSpan.textContent = 'Poor';
+                validationSpan.className = 'poor';
+            } else {
+                validationSpan.textContent = 'Good';
+                validationSpan.className = 'good';
+            }
+        }
+
+        const fnameInput = document.getElementById("fname");
+        const lnameInput = document.getElementById("lname");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const repasswordInput = document.getElementById("repassword");
+        const genderInput = document.querySelector('input[name="gender"]:checked');
+        const ageInput = document.getElementById("age");
+        const phnoInput = document.getElementById("phno");
+        const addressInput = document.getElementById("address");
+        const stateInput = document.getElementById("state");
+        const countryInput = document.getElementById("country");
+        const languagesInput = document.querySelectorAll('input[name="languages"]:checked');
+        const declarationInput = document.getElementById("declaration");
+        
+        const fnameValidation = document.getElementById("fnameValidation");
+        const lnameValidation = document.getElementById("lnameValidation");
+        const emailValidation = document.getElementById("emailValidation");
+        const passwordValidation = document.getElementById("passwordValidation");
+        const repasswordValidation = document.getElementById("repasswordValidation");
+        const genderValidation = document.getElementById("genderValidation");
+        const ageValidation = document.getElementById("ageValidation");
+        const phnoValidation = document.getElementById("phnoValidation");
+        const addressValidation = document.getElementById("addressValidation");
+        const stateValidation = document.getElementById("stateValidation");
+        const countryValidation = document.getElementById("countryValidation");
+        const languagesValidation = document.getElementById("languagesValidation");
+        const declarationValidation = document.getElementById("declarationValidation");
+        
+        fnameInput.addEventListener("input", () => validateField(fnameInput, fnameValidation));
+        lnameInput.addEventListener("input", () => validateField(lnameInput, lnameValidation));
+        emailInput.addEventListener("input", () => validateField(emailInput, emailValidation));
+        passwordInput.addEventListener("input", () => validateField(passwordInput, passwordValidation));
+        repasswordInput.addEventListener("input", () => validateField(repasswordInput, repasswordValidation));
+        genderInput.addEventListener("change", () => validateField(genderInput, genderValidation));
+        ageInput.addEventListener("input", () => validateField(ageInput, ageValidation));
+        phnoInput.addEventListener("input", () => validateField(phnoInput, phnoValidation));
+        addressInput.addEventListener("input", () => validateField(addressInput, addressValidation));
+        stateInput.addEventListener("input", () => validateField(stateInput, stateValidation));
+        countryInput.addEventListener("change", () => validateField(countryInput, countryValidation));
+        declarationInput.addEventListener("change", () => validateField(declarationInput, declarationValidation));
+        
+        languagesInput.forEach((language) => {
+            language.addEventListener("change", () => validateField(language, languagesValidation));
+        });
+    </script>
+</body>
+</html>
